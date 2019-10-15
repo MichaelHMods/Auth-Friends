@@ -6,7 +6,7 @@ Topics:
 * Protected Routes
 * `axios` package
 * AJAX
-* Promises
+* Promises 
 * Authentication tokens
 
 ## Project Description
