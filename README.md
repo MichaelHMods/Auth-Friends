@@ -5,7 +5,7 @@ Topics:
 * React Router
 * Protected Routes
 * `axios` package
-* AJAX
+* AJAX  
 * Promises 
 * Authentication tokens
 
