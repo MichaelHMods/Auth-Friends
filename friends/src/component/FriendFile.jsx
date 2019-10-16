@@ -11,7 +11,7 @@ const FriendFile = (props) => {
             <div className="id">id: {props.item.id}</div>
             <div className="age">age:{props.item.age}</div>
 
-            </div>    
+        </div>    
     )
 
 
