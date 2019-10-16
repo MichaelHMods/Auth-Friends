@@ -1,11 +1,9 @@
 import React from 'react';
-
-
-import { axiosWithAuth } from "../util/axiosWithAuth";
+import  {axiosWithAuth}  from "../util/axiosWithAuth";
 
 class Login extends React.Component {
     state = {
-        credentials:{
+        credentials: {
             username: '',
             password: ''
         }
@@ -32,7 +30,7 @@ class Login extends React.Component {
             this.props.history.push('/protected');
         })
         .catch(err => console.log('this is err on login', err.response));
-    }
+    };
 
     render() {
         return (
@@ -50,7 +48,7 @@ class Login extends React.Component {
                         value={this.state.credentials.password}
                         onChange={this.handleChange}
                     />
-                    <button>Log in</button>    
+                    <button type='submit'>Log in</button>    
                            
                 </form>
 

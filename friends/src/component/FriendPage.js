@@ -1,14 +1,14 @@
 import React from 'react';
-
+import FriendFile from './FriendFile';
 // import moment from 'moment';
 
-import Loader from 'react-loader-spinner';
+// import Loader from 'react-loader-spinner';
 
 import { axiosWithAuth } from "../util/axiosWithAuth";
 
 class FriendPage extends React.Component {
     state = {
-        id: '',
+        id: [{}],
         name: '', 
     };
 
@@ -20,18 +20,20 @@ class FriendPage extends React.Component {
         axiosWithAuth()
             .get('/api/friends')
             .then(res => {
-                console.log(res)
-                
-            },[])
+                console.log('this is res', res.data[0])
+                const friend = res.data
+            
             this.setState({
-
+                id: {friend}
             })
+            },[])
 
     }
     render() {
+        console.log('homie', this.state.id)
         return(
             <div>
-                <p>div</p>
+                
             </div>        )
     }
 
