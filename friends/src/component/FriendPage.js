@@ -8,7 +8,7 @@ import { axiosWithAuth } from "../util/axiosWithAuth";
 
 class FriendPage extends React.Component {
     state = {
-        id: [{}],
+        id: [],
         name: '', 
     };
 
@@ -20,21 +20,22 @@ class FriendPage extends React.Component {
         axiosWithAuth()
             .get('/api/friends')
             .then(res => {
-                console.log('this is res', res.data[0])
-                const friend = res.data
+                console.log('this is res', res.data)
+                
             
             this.setState({
-                id: {friend}
-            })
+                id: res.data
+            });
             },[])
-
-    }
+            .catch(err => console.log(err))
+    };
     render() {
         console.log('homie', this.state.id)
         return(
             <div>
-                
-            </div>        )
+                {this.state.id.map((item, i) => <FriendFile item={item} key={i} />)}
+            </div>        
+            )
     }
 
 
