@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import { axiosWithAuth } from "../util/axiosWithAuth";
 
 class Login extends React.Component {
@@ -30,7 +31,7 @@ class Login extends React.Component {
             localStorage.setItem('token', res.data.payload);
             this.props.history.push('/protected');
         })
-        .catch(err => console.log(err.response));
+        .catch(err => console.log('this is err on login', err.response));
     }
 
     render() {
